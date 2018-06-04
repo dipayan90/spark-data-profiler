@@ -1,7 +1,6 @@
-# spark-meta
+# spark-data-profiler
 
-Meta data utilities for the Spark DataFrame
-
+Profiles data stored in a file system or any other datasource.
 
 ## Profile
 
@@ -10,7 +9,7 @@ Data profiling works similar to df.describe(), but acts on non-numeric columns.
 To use profile execute the implicit method profile on a DataFrame.  An example follows.
 
 ```scala
-import com.jasonsatran.spark.meta.profile.DataFrameUtils._
+import com.kajjoy.spark.data.profiler.profile.DataFrameUtils._
 
 val df = Seq(
 
