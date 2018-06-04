@@ -1,17 +1,16 @@
-name := "spark-meta"
+name := "spark-data-profiler"
 
-version := "0.3.0"
+version := "1.0.0"
 
 scalaVersion := "2.11.8"
 
-sparkVersion := "2.1.0"
+sparkVersion := "2.3.0"
 
 sparkComponents += "sql"
 
-libraryDependencies ++= Seq(
-  "com.holdenkarau" % "spark-testing-base_2.11" % "2.0.1_0.4.7"
-)
-
 sparkComponents ++= Seq("sql","hive")
+
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
 
 parallelExecution in Test := false

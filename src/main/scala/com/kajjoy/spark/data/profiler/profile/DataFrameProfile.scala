@@ -1,4 +1,4 @@
-package com.jasonsatran.spark.meta.profile
+package com.kajjoy.spark.data.profiler.profile
 
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.apache.spark.sql.types.{StringType, StructField, StructType}

@@ -1,4 +1,4 @@
-package com.jasonsatran.spark.meta.helper
+package com.kajjoy.spark.data.profiler.helper
 
 import java.text.DecimalFormat
 import org.apache.spark.sql.functions._

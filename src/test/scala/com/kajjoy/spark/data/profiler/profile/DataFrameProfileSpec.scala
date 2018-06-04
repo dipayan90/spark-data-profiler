@@ -1,11 +1,12 @@
-package com.jasonsatran.spark.meta.profile
+package com.kajjoy.spark.data.profiler.profile
 
-import com.holdenkarau.spark.testing.DataFrameSuiteBase
+import com.kajjoy.spark.data.profiler.TestSparkContextProvider
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.scalatest.FunSpec
-import org.apache.spark.sql.DataFrame
 
-class DataFrameProfileSpec extends FunSpec with  DataFrameSuiteBase {
+class DataFrameProfileSpec extends FunSpec with TestSparkContextProvider {
 
+  val spark: SparkSession = getTestSparkContext()
   import spark.implicits._
 
   describe ("DataFrameProfile") {
@@ -17,7 +18,7 @@ class DataFrameProfileSpec extends FunSpec with  DataFrameSuiteBase {
 
     it("displays as a toString"){
       val actual : String = DataFrameProfile(baseballDf).toString
-      val expected =   scala.io.Source.fromFile("./src/test/Resources/expected/expectedBaseballTest").getLines().mkString("\n")
+      val expected =   scala.io.Source.fromFile("./src/test/resources/expected/expectedBaseballTest").getLines().mkString("\n")
       assert(actual.trim === expected)
     }
 
@@ -28,7 +29,7 @@ class DataFrameProfileSpec extends FunSpec with  DataFrameSuiteBase {
         .option("delimiter",",")
         .load("./src/test/resources/NYC_Social_Media_Usage.csv")
       val actual : String = DataFrameProfile(df).toString
-      val expected =   scala.io.Source.fromFile("./src/test/Resources/expected/expectedNYC").getLines().mkString("\n")
+      val expected =   scala.io.Source.fromFile("./src/test/resources/expected/expectedNYC").getLines().mkString("\n")
       assert (actual===expected)
     }
   }

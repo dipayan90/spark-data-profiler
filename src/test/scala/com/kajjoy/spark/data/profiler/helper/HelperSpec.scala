@@ -1,9 +1,9 @@
-package com.jasonsatran.spark.meta.helper
+package com.kajjoy.spark.data.profiler.helper
 
+import com.kajjoy.spark.data.profiler.helper.Helper._
 import org.scalatest._
-import Helper.{round, percentage, isEmpty, isNumeric, fieldLen}
 
-class HelperSpec extends FunSpec with BeforeAndAfterAll with ShouldMatchers {
+class HelperSpec extends FunSpec with BeforeAndAfterAll {
 
   describe("Helper") {
     it("should round") {

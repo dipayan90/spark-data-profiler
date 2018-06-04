@@ -1,8 +1,8 @@
-package com.jasonsatran.spark.meta.profile
+package com.kajjoy.spark.data.profiler.profile
 
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
-import com.jasonsatran.spark.meta.helper.Helper._
+import com.kajjoy.spark.data.profiler.helper.Helper._
 
 case class ColumnProfile(columnName: String
                           ,totalDataSetSize: Long

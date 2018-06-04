@@ -1,11 +1,12 @@
-package com.jasonsatran.spark.meta.profile
+package com.kajjoy.spark.data.profiler.profile
 
-import com.holdenkarau.spark.testing.DataFrameSuiteBase
+import com.kajjoy.spark.data.profiler.TestSparkContextProvider
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.scalatest.FunSpec
-import org.apache.spark.sql.DataFrame
 
-class ColumnProfileSpec extends FunSpec with  DataFrameSuiteBase {
+class ColumnProfileSpec extends FunSpec with TestSparkContextProvider  {
 
+  val spark : SparkSession = getTestSparkContext()
   import spark.implicits._
 
   describe("ColumnProfile"){
